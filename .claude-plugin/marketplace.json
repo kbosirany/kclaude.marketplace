@@ -1,0 +1,12 @@
+{
+  "name": "kclaude",
+  "owner": { "name": "Kevin" },
+  "metadata": { "description": "Kevin's personal Claude Code plugins" },
+  "plugins": [
+    {
+      "name": "matt-pocock-skills",
+      "source": "./plugins/matt-pocock-skills",
+      "description": "Matt Pocock's engineering, planning and writing skills"
+    }
+  ]
+}
