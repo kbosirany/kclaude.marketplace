@@ -7,7 +7,7 @@ Kevin's personal [Claude Code](https://claude.com/claude-code) plugin marketplac
 | Plugin | Description |
 | --- | --- |
 | `andrej-karpathy-skills` | `karpathy-guidelines`: behavioral guidelines to reduce common LLM coding mistakes. Referenced from [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) (MIT), pinned to a commit. |
-| `matt-pocock-skills` | Matt Pocock's engineering, planning and writing skills (`tdd`, `diagnosing-bugs`, `code-review`, `grilling`, `to-spec`, `triage`, ...). |
+| `mattpocock-skills` | Matt Pocock's engineering, planning and writing skills (`tdd`, `diagnosing-bugs`, `code-review`, `grilling`, `to-spec`, `triage`, ...). Referenced from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT), pinned to a commit. |
 
 ## Activation
 
@@ -34,20 +34,20 @@ For a local clone (handy while developing):
 ### 2. Install a plugin
 
 ```
-/plugin install matt-pocock-skills@kclaude
+/plugin install mattpocock-skills@kclaude
 ```
 
 (`kclaude` is the marketplace `name` in `.claude-plugin/marketplace.json`, not the repo name.)
 Restart the session or run `/reload-plugins` if the skills do not show up.
 
-Skills are then available as `/matt-pocock-skills:<skill>` (for example `/matt-pocock-skills:tdd`),
+Skills are then available as `/mattpocock-skills:<skill>` (for example `/mattpocock-skills:tdd`),
 and Claude can also invoke them on its own based on each skill's `description`.
 
 ### 3. Update / remove
 
 ```
 /plugin marketplace update kclaude
-/plugin uninstall matt-pocock-skills@kclaude
+/plugin uninstall mattpocock-skills@kclaude
 /plugin marketplace remove kclaude
 ```
 
@@ -63,7 +63,7 @@ Add to the project's `.claude/settings.json` so collaborators are prompted to in
     }
   },
   "enabledPlugins": {
-    "matt-pocock-skills@kclaude": true
+    "mattpocock-skills@kclaude": true
   }
 }
 ```
@@ -82,6 +82,9 @@ plugins/
 ```
 
 ## Adding a skill to an existing plugin
+
+Only for plugins hosted in this repository under `plugins/` (none yet; third-party plugins above live in
+their own repositories).
 
 1. Create `plugins/<plugin>/skills/<skill-name>/SKILL.md`:
 
@@ -131,7 +134,7 @@ Keep `name` equal to the folder name, and write the `description` as a trigger (
 
 A plugin can also live in another repository: use a `source` such as
 `{ "source": "github", "repo": "owner/repo", "sha": "<commit>" }` instead of a relative path
-(this is how `andrej-karpathy-skills` is wired). Pinning `sha` means upstream changes are only
+(this is how `mattpocock-skills` and `andrej-karpathy-skills` are wired). Pinning `sha` means upstream changes are only
 picked up when you bump it after reviewing them.
 
 ## Validate before pushing
@@ -144,6 +147,7 @@ or, inside Claude Code, `/plugin validate .`.
 
 ## Credits
 
-`matt-pocock-skills` is a copy of skills authored by [Matt Pocock](https://github.com/mattpocock/skills);
-see that repository for the original work and its license. Individual skills may carry their own
-credits (for example `skills/pr/CREDITS.md`).
+Both plugins are authored by third parties and only referenced from here:
+[mattpocock/skills](https://github.com/mattpocock/skills) (Matt Pocock) and
+[multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills).
+See their repositories for the original work and licenses.
