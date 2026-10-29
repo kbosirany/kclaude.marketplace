@@ -1,12 +1,25 @@
 {
   "name": "kclaude",
-  "owner": { "name": "Kevin" },
-  "metadata": { "description": "Kevin's personal Claude Code plugins" },
+  "owner": {
+    "name": "Kevin"
+  },
+  "metadata": {
+    "description": "Kevin's personal Claude Code plugins"
+  },
   "plugins": [
     {
       "name": "matt-pocock-skills",
       "source": "./plugins/matt-pocock-skills",
       "description": "Matt Pocock's engineering, planning and writing skills"
+    },
+    {
+      "name": "andrej-karpathy-skills",
+      "source": {
+        "source": "github",
+        "repo": "multica-ai/andrej-karpathy-skills",
+        "sha": "2c606141936f1eeef17fa3043a72095b4765b9c2"
+      },
+      "description": "Behavioral guidelines to reduce common LLM coding mistakes (Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution)"
     }
   ]
 }

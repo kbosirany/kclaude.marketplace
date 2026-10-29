@@ -6,6 +6,7 @@ Kevin's personal [Claude Code](https://claude.com/claude-code) plugin marketplac
 
 | Plugin | Description |
 | --- | --- |
+| `andrej-karpathy-skills` | `karpathy-guidelines`: behavioral guidelines to reduce common LLM coding mistakes. Referenced from [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) (MIT), pinned to a commit. |
 | `matt-pocock-skills` | Matt Pocock's engineering, planning and writing skills (`tdd`, `diagnosing-bugs`, `code-review`, `grilling`, `to-spec`, `triage`, ...). |
 
 ## Activation
@@ -129,7 +130,9 @@ Keep `name` equal to the folder name, and write the `description` as a trigger (
 4. Commit and push.
 
 A plugin can also live in another repository: use a `source` such as
-`{ "source": "github", "repo": "owner/repo" }` instead of a relative path.
+`{ "source": "github", "repo": "owner/repo", "sha": "<commit>" }` instead of a relative path
+(this is how `andrej-karpathy-skills` is wired). Pinning `sha` means upstream changes are only
+picked up when you bump it after reviewing them.
 
 ## Validate before pushing
 
